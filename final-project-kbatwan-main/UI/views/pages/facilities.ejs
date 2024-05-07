@@ -1,0 +1,131 @@
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+      .parent-div {
+          width: 100%;
+          margin: 0 auto;
+      }
+      .child-div {
+          width: 50%;
+          margin: 0 auto;
+          text-align: center;
+      }
+      table {
+        /* border-collapse: collapse; */
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #393737;
+        text-align: left;
+        padding: 7px;
+      }
+
+      .center {
+          left: 50%;
+      }
+      </style>
+</head>
+<body class="container" style="background-color:#f8f9fa">
+
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron" style="background-color:powderblue;">
+      <ul>
+          <h1>FACILITIES</h1>
+          <br>
+                <% if (locals.facilities) { %>
+                  <table>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                    </tr>
+                    <% locals.facilities.forEach(function(car) { %>
+                      <tr>
+                        <td><strong><%= car.id %></strong> </td>
+                        <td><strong><%= car.name %></strong>
+                    </tr>
+                    <% }); %>
+                  </table>
+                <% } %>
+            </ul>
+        </div>
+
+
+<div class="parent-div">
+  <div class="child-div">
+    <form action="/process_form_delete_facility" method="post" class="jumbotron" style="background-color:powderblue;height: 330px;">
+        <h1 style="font-size:200%">DELETE FACILITY</h1>
+        <br>
+        <div style="text-align:left">
+          <div class="control-group">
+              <div class="form-group floating-label-form-group controls" style="background-color:powderblue;">
+                <label style="color:rgb(63, 93, 97);">ID To Delete</label>
+                <input name="id" type="text" class="form-input to" placeholder="ID" id="id" required data-validation-required-message="Please enter your Username.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+              <input class ="btn-primary" type="submit">  
+            </div>
+      </form>
+    </div>  
+  </div>
+
+  <div class="parent-div">
+    <div class="child-div">
+    <form action="/process_form_update_facility" method="post" class="jumbotron" style="background-color:powderblue;height: 330px;">
+        <h1 style="font-size:200%">UPDATE FACILITY</h1>
+        <br>
+        <div style="text-align:left">
+          <div class="control-group">
+              <div class="form-group floating-label-form-group controls" style="background-color:powderblue;">
+                <label style="color:rgb(63, 93, 97);">ID To Update</label>
+                <input name="id" type="text" class="form-input to" placeholder="ID" id="id" required data-validation-required-message="Please enter the ID.">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group floating-label-form-group controls" style="background-color:powderblue;">
+                <label style="color:rgb(63, 93, 97);">NAME To Update</label>
+                <input name="name" type="text" class="form-input to" placeholder="NAME" id="name" required data-validation-required-message="Please enter the name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+              <input class ="btn-primary" type="submit">  
+            </div>
+            <br>
+      </form>
+  </div>
+  </div>
+
+    <!-- CREATE -->
+    <div class="parent-div">
+      <div class="child-div">
+      <form action="/process_form_create_facility" method="post" class="jumbotron" style="background-color:powderblue;height: 330px;">
+          <h1 style="font-size:200%">CREATE FACILITY</h1>
+          <br>
+          <div style="text-align:left">
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls" style="background-color:powderblue;">
+                  <label style="color:rgb(63, 93, 97);">NAME</label>
+                  <input name="name" type="text" class="form-input to" placeholder="NAME" id="name" required data-validation-required-message="Please enter the name.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+                <input class ="btn-primary" type="submit">  
+              </div>
+              <br>
+        </form>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

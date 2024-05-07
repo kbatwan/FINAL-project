@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container" style="background-color:white;">
+
+    <header style="font-size: 22px;">
+        DAY CARE FACILITY DATABASE
+    </header>
+    <br>
+    <main>
+        <div>
+            <form action="/process_form" method="post" class="jumbotron" style="background-color:powderblue;height: 330px;width: 40%;">
+              <h1 style="font-size:200%">Log in</h1>
+              <br>
+              <div style="text-align:left">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls" style="background-color:powderblue;">
+                      <label style="color:rgb(63, 93, 97);">Username</label>
+                      <input name="username" type="text" class="form-input to" placeholder="Username" id="username" required data-validation-required-message="Please enter your Username.">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                      <label style="color:rgb(63, 93, 97);">Password</label>
+                      <input name="password" type="text" class="form-input to" placeholder="Password" id="password" required data-validation-required-message="Please enter your Password.">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                    <input class ="btn-primary" type="submit">  
+                  </div>
+                  <br>
+              </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
